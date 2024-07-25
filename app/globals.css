@@ -2,32 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.lowbalance {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+
+}
+.goobalance {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  width: 50%;
+ 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.inc-exp-container {
+  background-color: #fcfcfc;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  box-shadow: #d4eddab3 0px 0px 10px 0px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+.navbar {
+  background: #000;
+  color: #fff;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar button,
+.guest button {
+  border: 0;
+  border-radius: 5px;
+  background: rgb(29, 29, 29);
+  color: #fff;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  opacity: 0.9;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar .cl-button {
+  background: transparent;
+  border: 0;
 }
