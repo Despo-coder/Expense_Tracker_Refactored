@@ -84,7 +84,7 @@ import { Card } from './ui/card';
         <Card className='container mt-10 p-6 shadow-lg border border-gray-200 rounded-lg'>
         <div className="flex items-center justify-between p-6">
           <h3 className='sm:text-2xl text-lg font-semibold'>{title ? title : 'Transaction Details'}</h3>
-          <Button className='bg-[#2eec5a] hover:bg-[#41fa6c]  rounded-xl text-white sm:mr-32' size={'sm'}> View Charts</Button>
+          <Button className='bg-[#2b6372] hover:bg-[#41fa6c]  rounded-xl text-white sm:mr-32' size={'sm'}> View Charts</Button>
         </div>
         
         <Table>

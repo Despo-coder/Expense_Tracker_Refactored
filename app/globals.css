@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 .lowbalance {
-  background: #f8d7da;
-  color: #721c24;
+  background: #721c24;
+  color:white ;
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
+  width: 50%;
 
 }
 .goobalance {
-  background: #d4edda;
-  color: #155724;
+  background: #2b6372;
+  color: white;
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;

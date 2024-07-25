@@ -4,8 +4,10 @@
 import ThemeToggler from "./ThemeToggler"
 import { SignedIn, UserButton, SignedOut, SignInButton } from '@clerk/nextjs'
 import Link from "next/link"
+import { checkUser } from '@/assets/utility/checkUser'
 
-const Navbar = () => {
+const Navbar = async() => {
+  const user = await checkUser()
   return (
     <div>
     <nav className='navbar'>
