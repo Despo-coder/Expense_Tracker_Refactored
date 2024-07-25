@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProviders";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -20,13 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ClerkProvider>
         <ThemeProvider>
         <Navbar />
-        <main className="container mx-auto px-4 py-8">
+        <main>
         {children}
+        <ToastContainer />
         </main>
     <Footer />
         </ThemeProvider>
+        </ClerkProvider>
         </body>
     </html>
   );

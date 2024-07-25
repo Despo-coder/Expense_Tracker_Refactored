@@ -53,7 +53,7 @@
   color: #c0392b;
 }
 .navbar {
-  background: #000;
+  background: #2b6372;
   color: #fff;
 }
 
@@ -77,11 +77,11 @@
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0.25rem 2rem;
 }
 
 .navbar .cl-button {
