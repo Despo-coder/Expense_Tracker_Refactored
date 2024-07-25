@@ -23,15 +23,14 @@ async function getIncomeExpense(): Promise<{
 
     const allPaymentTypes = ['Cash', 'Credit Card', 'Debit Card', 'Bank Transfer', 'Mobile Payment'];
 
-    // Initialize paymentTypeBreakdown with all types set to 0
-   // const paymentTypeBreakdown = Object.fromEntries(allPaymentTypes.map(type => [type, 0]));
+  
 
     let income = 0;
     let expense = 0;
     const categoryBreakdown: Record<string, number> = {};
     const dailySpendBreakdown: Record<string, number> = {};
 
-    // transactions.forEach((transaction) => {
+   
     //   if (transaction.transactionType === 'income') {
     //     income += transaction.amount;
     //   } else {

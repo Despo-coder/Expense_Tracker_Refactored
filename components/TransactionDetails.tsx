@@ -1,22 +1,35 @@
 'use client'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { useParams } from "next/navigation"
-import { use } from "react"
-import ClientIncomeExpense from "./ClientIncomeExpense"
+import { useEffect, useState } from "react"
+import { Transaction } from "@/types/transactions"
+import { getTransactionById } from "@/app/actions/getSingleTransaction"
 
 export default function TransactionDetails() {
-  //const router = useRouter()
   const { id } = useParams()
+  const [transaction, setTransaction] = useState<Transaction | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
-  console.log(id)
-  // Replace with actual data fetching logic
-  const transaction = {
-    id: 1,
-    type: 'Income',
-    name: 'Salary',
-    amount: 2000,
-    date: '2023-06-01',
-    paymentMethod: 'Bank Transfer'
+  useEffect(() => {
+    const fetchTransaction = async () => {
+      if (typeof id === 'string') {
+        const response = await getTransactionById(id)
+        if (response.error) {
+          setError(response.error)
+        } else if (response.transaction) {
+          setTransaction(response.transaction)
+        }
+      }
+    }
+    fetchTransaction()
+  }, [id])
+
+  if (error) {
+    return <div>Error: {error}</div>
+  }
+
+  if (!transaction) {
+    return <div>Loading...</div>
   }
 
   return (
@@ -28,19 +41,18 @@ export default function TransactionDetails() {
         <CardContent>
           <dl className="grid grid-cols-2 gap-4">
             <dt className="font-semibold">Type:</dt>
-            <dd>{transaction.type}</dd>
+            <dd>{transaction.transactionType}</dd>
             <dt className="font-semibold">Name:</dt>
-            <dd>{transaction.name}</dd>
+            <dd>{transaction.text}</dd>
             <dt className="font-semibold">Amount:</dt>
             <dd>${transaction.amount}</dd>
             <dt className="font-semibold">Date:</dt>
-            <dd>{transaction.date}</dd>
+            <dd>{new Date(transaction.createdAt).toLocaleDateString()}</dd>
             <dt className="font-semibold">Payment Method:</dt>
-            <dd>{transaction.paymentMethod}</dd>
+            <dd>{transaction.paymentType}</dd>
           </dl>
         </CardContent>
       </Card>
-      <ClientIncomeExpense />
     </div>
   )
 }
