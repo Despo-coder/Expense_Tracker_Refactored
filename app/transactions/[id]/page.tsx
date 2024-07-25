@@ -1,9 +1,9 @@
-import React from 'react'
+import TransactionDetails from "@/components/TransactionDetails"
 
 const page = () => {
   return (
     <div>
-      ID Page
+     <TransactionDetails />
     </div>
   )
 }
