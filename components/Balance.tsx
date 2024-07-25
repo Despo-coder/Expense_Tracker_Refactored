@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 import { addCommas } from '@/assets/utility/addCommas';
 import { currentUser } from '@clerk/nextjs/server';
+import getUserBalance from '@/app/actions/getUserBalance';
 
 async function BalanceSection() {
   const user = await currentUser(); // Replace with actual user data
   const userName = user?.firstName || 'User';
-  const balance = 5000; // Replace with actual balance
+  const { balance } = await getUserBalance();// Replace with actual balance
 
   return (
     <div>

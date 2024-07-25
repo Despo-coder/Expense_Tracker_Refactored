@@ -4,6 +4,8 @@ import AllTransactions from "@/components/History";
 import TransactionPagination from "@/components/TransactionPagination";
 import { currentUser } from "@clerk/nextjs/server"
 import Guest from "@/components/Guest";
+//import ClientIncomeExpense from "@/components/ClientIncomeExpense";
+import Charts from "@/components/Charts";
 
 
 export default async function Home() {
@@ -16,6 +18,7 @@ export default async function Home() {
    <main> 
 <Hero />
 <TransactionForm />
+<Charts />
 <AllTransactions />
 <TransactionPagination />
    </main>

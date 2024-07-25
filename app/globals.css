@@ -21,6 +21,11 @@
  
 }
 
+.chart-container {
+  height: 300px;
+  width: 100%;
+}
+
 .inc-exp-container {
   background-color: #fcfcfc;
   box-shadow: var(--box-shadow);

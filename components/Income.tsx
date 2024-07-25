@@ -1,8 +1,8 @@
 import { addCommas } from "@/assets/utility/addCommas";
+import getIncomeExpense from '@/app/actions/getIncomeExpense';
 
-function IncomeExpenseSection() {
-  const income = 2000; // Replace with actual income
-  const expense = 1000; // Replace with actual expense
+async function IncomeExpenseSection() {
+  const { income, expense } = await getIncomeExpense();
 
   return (
     <div className='inc-exp-container '>

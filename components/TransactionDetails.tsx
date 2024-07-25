@@ -2,6 +2,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { useParams } from "next/navigation"
 import { use } from "react"
+import ClientIncomeExpense from "./ClientIncomeExpense"
 
 export default function TransactionDetails() {
   //const router = useRouter()
@@ -39,6 +40,7 @@ export default function TransactionDetails() {
           </dl>
         </CardContent>
       </Card>
+      <ClientIncomeExpense />
     </div>
   )
 }
